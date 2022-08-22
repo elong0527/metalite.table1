@@ -13,12 +13,11 @@ reactable2 <- function(data,
                        label = TRUE,
                        wrap = FALSE,
                        download = FALSE,
+                       col_def = NULL,
                        ...){
 
-  arg <- list(...)
-
   # Display variable label as hover text
-  if(label & is.null(arg$defaultColDef)){
+  if(label & is.null(col_def)){
     label <- get_label(data)
 
     col_header <- function(value, name){
@@ -37,6 +36,7 @@ reactable2 <- function(data,
     filterable = filterable,
     searchable = searchable,
     defaultPageSize = defaultPageSize,
+    defaultColDef = col_def,
     showPageSizeOptions = showPageSizeOptions,
     borderless = borderless,
     striped = striped,

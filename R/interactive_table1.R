@@ -76,7 +76,7 @@ interactive_table1 <- function(meta,
                name_display = reactable::colDef(name = "", minWidth = name_width),
                name = reactable::colDef(show = FALSE)
              ),
-             defaultColDef = col_def,
+             col_def = col_def,
              details = details_ggplot2)
 
 }

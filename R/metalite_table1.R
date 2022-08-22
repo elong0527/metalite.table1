@@ -12,15 +12,7 @@ metalite_table1 <- function(formula, data, id){
 
   data[[group]] <- factor(data[[group]])
 
-  var_label <- vapply(data, function(x){
-                        if(is.null(attr(x, "label"))){
-                          return(NA_character_)
-                        }else{
-                          attr(x, "label")
-                        }},
-                      FUN.VALUE = character(1))
-  var_label <- ifelse(is.na(var_label), names(data), var_label)[var]
-  names(var_label) <- NULL
+  var_label <- get_label(data)[var]
 
   plan <- metalite::plan(analysis = "interactive_table1",
                          population = "all",
@@ -60,6 +52,8 @@ metalite_table1 <- function(formula, data, id){
 
   meta <- metalite::meta_build(meta)
 
+  htmltools::browsable(
+    htmltools::tagList(metalite::meta_run(meta))
+  )
 
-  meta
 }
