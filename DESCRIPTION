@@ -11,3 +11,7 @@ RoxygenNote: 7.2.1
 Imports: 
     metalite,
     reactable
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
