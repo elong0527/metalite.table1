@@ -57,7 +57,7 @@ metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis vari
 
 The interactive features are illustrated in the GIF below. 
 
-```{r, echo = FALSE, eval = FALSE}
+```{r, echo = FALSE}
 knitr::include_graphics("fig/table1.gif")
 ```
 
