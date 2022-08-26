@@ -1,3 +1,10 @@
+#' Interactive table1
+#'
+#' @param formula a formula
+#' @param data a data frame
+#' @param id a variable name
+#'
+#' @export
 metalite_table1 <- function(formula, data, id){
 
   if(formula[[2]][[1]] == "|"){

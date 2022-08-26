@@ -48,7 +48,7 @@ df$ARM <- factor(df$ARM,
 df[1:6, c("USUBJID", "ARM", "AGE", "SEX", "RACE", "BMIBLGR1")]
 ```
 
-```{r, eval = FALSE}
+```{r}
 # Create interactive table1
 metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis variables and group 
                 data = df,                           # source data
