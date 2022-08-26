@@ -85,7 +85,14 @@
 <span>                 <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline Low Dose"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span>, </span>
 <span>                 <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Low Dose"</span>, <span class="st">"High Dose"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"USUBJID"</span>, <span class="st">"ARM"</span>, <span class="st">"AGE"</span>, <span class="st">"SEX"</span>, <span class="st">"RACE"</span>, <span class="st">"BMIBLGR1"</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
+<span><span class="va">df</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"USUBJID"</span>, <span class="st">"ARM"</span>, <span class="st">"AGE"</span>, <span class="st">"SEX"</span>, <span class="st">"RACE"</span>, <span class="st">"BMIBLGR1"</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt;       USUBJID       ARM AGE SEX  RACE BMIBLGR1</span></span>
+<span><span class="co">#&gt; 1 01-701-1015   Placebo  NA   F WHITE   25-&lt;30</span></span>
+<span><span class="co">#&gt; 2 01-701-1023   Placebo  NA   M WHITE     &gt;=30</span></span>
+<span><span class="co">#&gt; 3 01-701-1028 High Dose  NA   M WHITE     &gt;=30</span></span>
+<span><span class="co">#&gt; 4 01-701-1033  Low Dose  74   M WHITE   25-&lt;30</span></span>
+<span><span class="co">#&gt; 5 01-701-1034 High Dose  77   F WHITE   25-&lt;30</span></span>
+<span><span class="co">#&gt; 6 01-701-1047   Placebo  85   F WHITE     &gt;=30</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create interactive table1</span></span>
 <span><span class="fu">metalite_table1</span><span class="op">(</span><span class="op">~</span> <span class="va">AGE</span> <span class="op">+</span> <span class="va">SEX</span> <span class="op">+</span> <span class="va">RACE</span> <span class="op">+</span> <span class="va">BMIBLGR1</span> <span class="op">|</span> <span class="va">ARM</span>, <span class="co"># formula for analysis variables and group </span></span>
