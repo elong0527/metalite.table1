@@ -16,7 +16,8 @@ Imports:
 Suggests: 
     knitr,
     r2rtf,
-    table1
+    table1,
+    devtools
 VignetteBuilder: knitr
 Remotes:
     Merck/metalite
