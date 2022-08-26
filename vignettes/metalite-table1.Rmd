@@ -44,6 +44,8 @@ df$AGE[1:3] <- NA # Create missing value for illustration purpose.
 df$ARM <- factor(df$ARM, 
                  c("Placebo", "Xanomeline Low Dose", "Xanomeline High Dose"), 
                  c("Placebo", "Low Dose", "High Dose"))
+
+df[1:6, c("USUBJID", "ARM", "AGE", "SEX", "RACE", "BMIBLGR1")]
 ```
 
 ```{r}
