@@ -53,7 +53,25 @@ metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis vari
                 id = "USUBJID")                      # unique subject id
 ```
 
+The interactive features are illustrated in the GIF below. 
 
+```{r}
+knitr::include_graphics("fig/table1.gif")
+```
+
+In comparison with the `table1` R package, 
+we are able to answer ad-hoc questions from clinicians with interactive features such as 
+
+- Who are those subjects with missing value. 
+- Who are those outliers.  
+- What's the distribution of a variable by treatment group. 
+
+Those are common questions for ongoing clinical trials. 
+
+```{r}
+# create table1
+table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, data = df)
+```
 
 
 

@@ -50,10 +50,11 @@ reactable2 <- function(data,
   )
 
   if(download){
-    htmltools::browsable(
-      tagList(
-        tags$button("Download as CSV", onclick = paste0("Reactable.downloadDataCSV('", element_id, "')")),
+    on_click <- paste0("Reactable.downloadDataCSV('", element_id, "')")
 
+    htmltools::browsable(
+      htmltools::tagList(
+        htmltools::tags$button("Download as CSV", onclick = on_click),
         tbl
       )
     )
