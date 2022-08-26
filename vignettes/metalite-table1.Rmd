@@ -1,8 +1,8 @@
 ---
-title: "Overview of `metalite.table1`"
+title: "Overview
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Overview of `metalite.table1`}
+  %\VignetteIndexEntry{Overview}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
