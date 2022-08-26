@@ -37,7 +37,7 @@ contains more details.
 The `metalite.table1` provide an interactive table1 to 
 enhance the communication between statisticians and clinicians. 
 
-```{r, eval = FALSE}
+```{r}
 # Prepare analysis ready data 
 df <- r2rtf_adsl
 df$AGE[1:3] <- NA # Create missing value for illustration purpose. 
@@ -48,7 +48,7 @@ df$ARM <- factor(df$ARM,
 df[1:6, c("USUBJID", "ARM", "AGE", "SEX", "RACE", "BMIBLGR1")]
 ```
 
-```{r, eval = FALSE}
+```{r}
 # Create interactive table1
 metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis variables and group 
                 data = df,                           # source data
@@ -57,7 +57,7 @@ metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis vari
 
 The interactive features are illustrated in the GIF below. 
 
-```{r, echo = FALSE, eval = FALSE}
+```{r, echo = FALSE}
 knitr::include_graphics("fig/table1.gif")
 ```
 
@@ -70,7 +70,7 @@ we are able to answer ad-hoc questions from clinicians with interactive features
 
 Those are common questions for ongoing clinical trials. 
 
-```{r, eval = FALSE}
+```{r}
 # create table1
 table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, data = df)
 ```
