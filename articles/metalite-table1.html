@@ -55,7 +55,7 @@
 
 
 
-
+<link href="metalite-table1_files/table1-1.0/table1_defaults.css" rel="stylesheet">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Overview</h1>
@@ -95,7 +95,7 @@
 <span><span class="co">#&gt; 6 01-701-1047   Placebo  85   F WHITE     &gt;=30</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create interactive table1</span></span>
-<span><span class="fu">metalite_table1</span><span class="op">(</span><span class="op">~</span> <span class="va">AGE</span> <span class="op">+</span> <span class="va">SEX</span> <span class="op">+</span> <span class="va">RACE</span> <span class="op">+</span> <span class="va">BMIBLGR1</span> <span class="op">|</span> <span class="va">ARM</span>, <span class="co"># formula for analysis variables and group </span></span>
+<span><span class="fu"><a href="../reference/metalite_table1.html">metalite_table1</a></span><span class="op">(</span><span class="op">~</span> <span class="va">AGE</span> <span class="op">+</span> <span class="va">SEX</span> <span class="op">+</span> <span class="va">RACE</span> <span class="op">+</span> <span class="va">BMIBLGR1</span> <span class="op">|</span> <span class="va">ARM</span>, <span class="co"># formula for analysis variables and group </span></span>
 <span>                data <span class="op">=</span> <span class="va">df</span>,                           <span class="co"># source data</span></span>
 <span>                id <span class="op">=</span> <span class="st">"USUBJID"</span><span class="op">)</span>                      <span class="co"># unique subject id</span></span></code></pre></div>
 <p>The interactive features are illustrated in the GIF below.</p>
@@ -110,6 +110,122 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># create table1</span></span>
 <span><span class="fu">table1</span><span class="op">(</span><span class="op">~</span> <span class="va">AGE</span> <span class="op">+</span> <span class="va">SEX</span> <span class="op">+</span> <span class="va">RACE</span> <span class="op">+</span> <span class="va">BMIBLGR1</span> <span class="op">|</span> <span class="va">ARM</span>, data <span class="op">=</span> <span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<div class="Rtable1"><table class="table Rtable1">
+<thead><tr>
+<th class="rowlabel firstrow lastrow"></th>
+<th class="firstrow lastrow"><span class="stratlabel">Placebo<br><span class="stratn">(N=86)</span></span></th>
+<th class="firstrow lastrow"><span class="stratlabel">Low Dose<br><span class="stratn">(N=84)</span></span></th>
+<th class="firstrow lastrow"><span class="stratlabel">High Dose<br><span class="stratn">(N=84)</span></span></th>
+<th class="firstrow lastrow"><span class="stratlabel">Overall<br><span class="stratn">(N=254)</span></span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="rowlabel firstrow">Age</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr>
+<td class="rowlabel">Mean (SD)</td>
+<td>75.5 (8.50)</td>
+<td>75.7 (8.29)</td>
+<td>74.4 (7.93)</td>
+<td>75.2 (8.23)</td>
+</tr>
+<tr>
+<td class="rowlabel">Median [Min, Max]</td>
+<td>76.5 [52.0, 89.0]</td>
+<td>77.5 [51.0, 88.0]</td>
+<td>76.0 [56.0, 88.0]</td>
+<td>77.0 [51.0, 89.0]</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">Missing</td>
+<td class="lastrow">2 (2.3%)</td>
+<td class="lastrow">0 (0%)</td>
+<td class="lastrow">1 (1.2%)</td>
+<td class="lastrow">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">Sex</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr>
+<td class="rowlabel">F</td>
+<td>53 (61.6%)</td>
+<td>50 (59.5%)</td>
+<td>40 (47.6%)</td>
+<td>143 (56.3%)</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">M</td>
+<td class="lastrow">33 (38.4%)</td>
+<td class="lastrow">34 (40.5%)</td>
+<td class="lastrow">44 (52.4%)</td>
+<td class="lastrow">111 (43.7%)</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">Race</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr>
+<td class="rowlabel">BLACK OR AFRICAN AMERICAN</td>
+<td>8 (9.3%)</td>
+<td>6 (7.1%)</td>
+<td>9 (10.7%)</td>
+<td>23 (9.1%)</td>
+</tr>
+<tr>
+<td class="rowlabel">WHITE</td>
+<td>78 (90.7%)</td>
+<td>78 (92.9%)</td>
+<td>74 (88.1%)</td>
+<td>230 (90.6%)</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">AMERICAN INDIAN OR ALASKA NATIVE</td>
+<td class="lastrow">0 (0%)</td>
+<td class="lastrow">0 (0%)</td>
+<td class="lastrow">1 (1.2%)</td>
+<td class="lastrow">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">Pooled Baseline BMI Group 1</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr>
+<td class="rowlabel">&lt;25</td>
+<td>59 (68.6%)</td>
+<td>47 (56.0%)</td>
+<td>44 (52.4%)</td>
+<td>150 (59.1%)</td>
+</tr>
+<tr>
+<td class="rowlabel">&gt;=30</td>
+<td>6 (7.0%)</td>
+<td>10 (11.9%)</td>
+<td>12 (14.3%)</td>
+<td>28 (11.0%)</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">25-&lt;30</td>
+<td class="lastrow">21 (24.4%)</td>
+<td class="lastrow">27 (32.1%)</td>
+<td class="lastrow">28 (33.3%)</td>
+<td class="lastrow">76 (29.9%)</td>
+</tr>
+</tbody>
+</table></div>
 </div>
   </main>
 </div>
