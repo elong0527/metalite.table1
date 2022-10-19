@@ -21,7 +21,7 @@ metalite_table1 <- function(formula, data, id){
 
   var_label <- get_label(data)[var]
 
-  plan <- metalite::plan(analysis = "interactive_table1",
+  plan <- metalite::plan(analysis = "metalite:::interactive_table1",
                          population = "all",
                          observation = "inf",
                          parameter = var)
