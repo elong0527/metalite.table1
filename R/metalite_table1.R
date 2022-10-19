@@ -25,8 +25,7 @@ metalite_table1 <- function(formula, data, id, var_listing = NULL){
   plan <- metalite::plan(analysis = "metalite.table1:::interactive_table1",
                          population = "all",
                          observation = "inf",
-                         parameter = var,
-                         var_listing = var_listing)
+                         parameter = var)
 
   plan$column_header = FALSE
   plan$column_header[1] = TRUE
@@ -65,7 +64,7 @@ metalite_table1 <- function(formula, data, id, var_listing = NULL){
   meta <- metalite::meta_build(meta)
 
   htmltools::browsable(
-    htmltools::tagList(metalite::meta_run(meta))
+    htmltools::tagList(metalite::meta_run(meta, var_listing = var_listing))
   )
 
 }
