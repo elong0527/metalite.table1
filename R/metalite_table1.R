@@ -59,8 +59,8 @@ metalite_table1 <- function(formula, data, id){
 
   meta <- metalite::meta_build(meta)
 
-  htmltools::browsable(
-    htmltools::tagList(metalite::meta_run(meta))
-  )
+  # htmltools::browsable(
+  #   htmltools::tagList(metalite::meta_run(meta))
+  # )
 
 }
