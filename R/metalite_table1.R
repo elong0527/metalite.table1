@@ -21,7 +21,7 @@ metalite_table1 <- function(formula, data, id){
 
   var_label <- get_label(data)[var]
 
-  plan <- metalite::plan(analysis = "metalite:::interactive_table1",
+  plan <- metalite::plan(analysis = "metalite.table1:::interactive_table1",
                          population = "all",
                          observation = "inf",
                          parameter = var)
@@ -55,7 +55,7 @@ metalite_table1 <- function(formula, data, id){
                                        subset = NULL)
   }
 
-  meta <- metalite::define_analysis(meta, name = "metalite:::interactive_table1", label = "Interactive Table 1")
+  meta <- metalite::define_analysis(meta, name = "metalite.table1:::interactive_table1", label = "Interactive Table 1")
 
   meta <- metalite::meta_build(meta)
 
