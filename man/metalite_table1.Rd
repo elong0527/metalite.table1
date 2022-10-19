@@ -4,7 +4,7 @@
 \alias{metalite_table1}
 \title{Interactive table1}
 \usage{
-metalite_table1(formula, data, id)
+metalite_table1(formula, data, id, var_listing = NULL)
 }
 \arguments{
 \item{formula}{a formula}
@@ -12,6 +12,8 @@ metalite_table1(formula, data, id)
 \item{data}{a data frame}
 
 \item{id}{a variable name}
+
+\item{var_listing}{a character vector of additional variables included in the listing.}
 }
 \description{
 Interactive table1

@@ -3,6 +3,7 @@ interactive_table1 <- function(meta,
                                parameter,
                                keep_missing = TRUE,
                                column_header = TRUE,
+                               var_listing = NULL,
                                ...){
 
   par <- metalite::collect_adam_mapping(meta, parameter)$var
@@ -15,7 +16,8 @@ interactive_table1 <- function(meta,
                                      population = population,
                                      parameter = parameter,
                                      listing = TRUE,
-                                     histogram = TRUE)
+                                     histogram = TRUE,
+                                     var_listing = var_listing)
 
   # Display details in reactable
   details_ggplot2 <- function(index){

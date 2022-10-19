@@ -3,9 +3,10 @@
 #' @param formula a formula
 #' @param data a data frame
 #' @param id a variable name
+#' @param var_listing a character vector of additional variables included in the listing.
 #'
 #' @export
-metalite_table1 <- function(formula, data, id){
+metalite_table1 <- function(formula, data, id, var_listing = NULL){
 
   if(formula[[2]][[1]] == "|"){
     var = all.vars(formula[[2]][[2]])
@@ -24,7 +25,9 @@ metalite_table1 <- function(formula, data, id){
   plan <- metalite::plan(analysis = "metalite.table1:::interactive_table1",
                          population = "all",
                          observation = "inf",
-                         parameter = var)
+                         parameter = var,
+                         var_listing = var_listing)
+
   plan$column_header = FALSE
   plan$column_header[1] = TRUE
 
@@ -55,7 +58,9 @@ metalite_table1 <- function(formula, data, id){
                                        subset = NULL)
   }
 
-  meta <- metalite::define_analysis(meta, name = "metalite.table1:::interactive_table1", label = "Interactive Table 1")
+  meta <- metalite::define_analysis(meta,
+                                    name = "metalite.table1:::interactive_table1",
+                                    label = "Interactive Table 1")
 
   meta <- metalite::meta_build(meta)
 
