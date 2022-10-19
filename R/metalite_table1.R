@@ -55,7 +55,7 @@ metalite_table1 <- function(formula, data, id){
                                        subset = NULL)
   }
 
-  meta <- metalite::define_analysis(meta, name = "interactive_table1", label = "Interactive Table 1")
+  meta <- metalite::define_analysis(meta, name = "metalite:::interactive_table1", label = "Interactive Table 1")
 
   meta <- metalite::meta_build(meta)
 
