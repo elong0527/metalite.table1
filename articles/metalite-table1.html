@@ -70,13 +70,18 @@
 <div class="section level2">
 <h2 id="motivation">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
 </h2>
-<p>A table for descriptive statistics is widely used in medical research and typically be the first table (i.e. <code>table1</code>) for a manuscript.</p>
+<p>A table for descriptive statistics is widely used in medical research
+and typically be the first table (i.e. <code>table1</code>) for a
+manuscript.</p>
 <p>There are R packages and examples to create the table1:</p>
 <ul>
 <li><a href="https://github.com/benjaminrich/table1" class="external-link"><code>table1</code></a></li>
 </ul>
-<p>For use case in clinical trials, <a href="https://r4csr.org/baseline-characteristics.html" class="external-link">Chapter 4 of the R for clinical study reports and submission</a> contains more details.</p>
-<p>The <code>metalite.table1</code> provide an interactive table1 to enhance the communication between statisticians and clinicians.</p>
+<p>For use case in clinical trials, <a href="https://r4csr.org/baseline-characteristics.html" class="external-link">Chapter 4 of the
+R for clinical study reports and submission</a> contains more
+details.</p>
+<p>The <code>metalite.table1</code> provide an interactive table1 to
+enhance the communication between statisticians and clinicians.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Prepare analysis ready data </span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">r2rtf_adsl</span></span>
@@ -100,7 +105,9 @@
 <span>                id <span class="op">=</span> <span class="st">"USUBJID"</span><span class="op">)</span>                      <span class="co"># unique subject id</span></span></code></pre></div>
 <p>The interactive features are illustrated in the GIF below.</p>
 <p><img src="fig/table1.gif"><!-- --></p>
-<p>In comparison with the <code>table1</code> R package, we are able to answer ad-hoc questions from clinicians with interactive features such as</p>
+<p>In comparison with the <code>table1</code> R package, we are able to
+answer ad-hoc questions from clinicians with interactive features such
+as</p>
 <ul>
 <li>Who are those subjects with missing value.</li>
 <li>Who are those outliers.<br>
