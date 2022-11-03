@@ -4,7 +4,7 @@
 \alias{metalite_table1}
 \title{Interactive table1}
 \usage{
-metalite_table1(formula, data, id, var_listing = NULL)
+metalite_table1(formula, data, id, var_listing = NULL, download = "none")
 }
 \arguments{
 \item{formula}{a formula}
@@ -14,6 +14,9 @@ metalite_table1(formula, data, id, var_listing = NULL)
 \item{id}{a variable name}
 
 \item{var_listing}{a character vector of additional variables included in the listing.}
+
+\item{download}{a character to enable download button. Allowed value include
+"none", "listing", "table", and 'all'.}
 }
 \description{
 Interactive table1
