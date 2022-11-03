@@ -4,7 +4,10 @@ interactive_table1 <- function(meta,
                                keep_missing = TRUE,
                                column_header = TRUE,
                                var_listing = NULL,
+                               download = "none",
                                ...){
+
+  download = match.arg(download, choices = c("none", "listing", "table", 'all'))
 
   par <- metalite::collect_adam_mapping(meta, parameter)$var
 
@@ -31,7 +34,7 @@ interactive_table1 <- function(meta,
 
     if("data.frame" %in% class(x)){
       if(nrow(x) > 0){
-        return(reactable2(x))
+        return(reactable2(x, download = download %in% c("listing", "all")))
       }
     }
 
@@ -79,6 +82,7 @@ interactive_table1 <- function(meta,
                name = reactable::colDef(show = FALSE)
              ),
              col_def = col_def,
+             download = download %in% c("table", "all"),
              details = details_ggplot2)
 
 }
