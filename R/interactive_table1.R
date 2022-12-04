@@ -75,6 +75,7 @@ interactive_table1 <- function(meta,
              sortable = FALSE,
              searchable = FALSE,
              filterable = FALSE,
+             defaultPageSize = 50,
              wrap = TRUE,
              label = FALSE,
              columns = list(
