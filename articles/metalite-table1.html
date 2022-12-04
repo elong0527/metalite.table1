@@ -83,12 +83,14 @@ details.</p>
 <p>The <code>metalite.table1</code> provide an interactive table1 to
 enhance the communication between statisticians and clinicians.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Prepare analysis ready data </span></span>
+<code class="sourceCode R"><span><span class="co"># Prepare analysis ready data</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">r2rtf_adsl</span></span>
-<span><span class="va">df</span><span class="op">$</span><span class="va">AGE</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span> <span class="co"># Create missing value for illustration purpose. </span></span>
-<span><span class="va">df</span><span class="op">$</span><span class="va">ARM</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">ARM</span>, </span>
-<span>                 <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline Low Dose"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span>, </span>
-<span>                 <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Low Dose"</span>, <span class="st">"High Dose"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">AGE</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span> <span class="co"># Create missing value for illustration purpose.</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">ARM</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span></span>
+<span>  <span class="va">df</span><span class="op">$</span><span class="va">ARM</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline Low Dose"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Low Dose"</span>, <span class="st">"High Dose"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"USUBJID"</span>, <span class="st">"ARM"</span>, <span class="st">"AGE"</span>, <span class="st">"SEX"</span>, <span class="st">"RACE"</span>, <span class="st">"BMIBLGR1"</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt;       USUBJID       ARM AGE SEX  RACE BMIBLGR1</span></span>
@@ -100,9 +102,10 @@ enhance the communication between statisticians and clinicians.</p>
 <span><span class="co">#&gt; 6 01-701-1047   Placebo  85   F WHITE     &gt;=30</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create interactive table1</span></span>
-<span><span class="fu"><a href="../reference/metalite_table1.html">metalite_table1</a></span><span class="op">(</span><span class="op">~</span> <span class="va">AGE</span> <span class="op">+</span> <span class="va">SEX</span> <span class="op">+</span> <span class="va">RACE</span> <span class="op">+</span> <span class="va">BMIBLGR1</span> <span class="op">|</span> <span class="va">ARM</span>, <span class="co"># formula for analysis variables and group </span></span>
-<span>                data <span class="op">=</span> <span class="va">df</span>,                           <span class="co"># source data</span></span>
-<span>                id <span class="op">=</span> <span class="st">"USUBJID"</span><span class="op">)</span>                      <span class="co"># unique subject id</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/metalite_table1.html">metalite_table1</a></span><span class="op">(</span><span class="op">~</span> <span class="va">AGE</span> <span class="op">+</span> <span class="va">SEX</span> <span class="op">+</span> <span class="va">RACE</span> <span class="op">+</span> <span class="va">BMIBLGR1</span> <span class="op">|</span> <span class="va">ARM</span>, <span class="co"># formula for analysis variables and group</span></span>
+<span>  data <span class="op">=</span> <span class="va">df</span>, <span class="co"># source data</span></span>
+<span>  id <span class="op">=</span> <span class="st">"USUBJID"</span></span>
+<span><span class="op">)</span> <span class="co"># unique subject id</span></span></code></pre></div>
 <p>The interactive features are illustrated in the GIF below.</p>
 <p><img src="fig/table1.gif"><!-- --></p>
 <p>In comparison with the <code>table1</code> R package, we are able to
