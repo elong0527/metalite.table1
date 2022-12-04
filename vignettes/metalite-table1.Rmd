@@ -38,21 +38,24 @@ The `metalite.table1` provide an interactive table1 to
 enhance the communication between statisticians and clinicians. 
 
 ```{r}
-# Prepare analysis ready data 
+# Prepare analysis ready data
 df <- r2rtf_adsl
-df$AGE[1:3] <- NA # Create missing value for illustration purpose. 
-df$ARM <- factor(df$ARM, 
-                 c("Placebo", "Xanomeline Low Dose", "Xanomeline High Dose"), 
-                 c("Placebo", "Low Dose", "High Dose"))
+df$AGE[1:3] <- NA # Create missing value for illustration purpose.
+df$ARM <- factor(
+  df$ARM,
+  c("Placebo", "Xanomeline Low Dose", "Xanomeline High Dose"),
+  c("Placebo", "Low Dose", "High Dose")
+)
 
 df[1:6, c("USUBJID", "ARM", "AGE", "SEX", "RACE", "BMIBLGR1")]
 ```
 
 ```{r, eval = FALSE}
 # Create interactive table1
-metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis variables and group 
-                data = df,                           # source data
-                id = "USUBJID")                      # unique subject id
+metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis variables and group
+  data = df, # source data
+  id = "USUBJID"
+) # unique subject id
 ```
 
 The interactive features are illustrated in the GIF below. 

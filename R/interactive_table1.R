@@ -5,26 +5,25 @@ interactive_table1 <- function(meta,
                                column_header = TRUE,
                                var_listing = NULL,
                                download = "none",
-                               ...){
-
-  download = match.arg(download, choices = c("none", "listing", "table", 'all'))
+                               ...) {
+  download <- match.arg(download, choices = c("none", "listing", "table", "all"))
 
   par <- metalite::collect_adam_mapping(meta, parameter)$var
 
-  if(all(is.na(meta$data_population[[par]]))){
+  if (all(is.na(meta$data_population[[par]]))) {
     return(NULL)
   }
 
   tbl <- metalite::collect_n_subject(meta,
-                                     population = population,
-                                     parameter = parameter,
-                                     listing = TRUE,
-                                     histogram = TRUE,
-                                     var_listing = var_listing)
+    population = population,
+    parameter = parameter,
+    listing = TRUE,
+    histogram = TRUE,
+    var_listing = var_listing
+  )
 
   # Display details in reactable
-  details_ggplot2 <- function(index){
-
+  details_ggplot2 <- function(index) {
     detail <- tbl$listing
     detail[[tbl$table$name[1]]] <- tbl$histogram
 
@@ -32,14 +31,14 @@ interactive_table1 <- function(meta,
 
     x <- detail[[name]]
 
-    if("data.frame" %in% class(x)){
-      if(nrow(x) > 0){
+    if ("data.frame" %in% class(x)) {
+      if (nrow(x) > 0) {
         return(reactable2(x, download = download %in% c("listing", "all")))
       }
     }
 
 
-    if("ggplot" %in% class(x)){
+    if ("ggplot" %in% class(x)) {
       return(htmltools::plotTag(x, alt = "plots", width = 600))
     }
 
@@ -61,29 +60,29 @@ interactive_table1 <- function(meta,
   # update table
   tbl$table <- data.frame(name_display = name_display, tbl$table)
 
-  if(! keep_missing){
-    tbl$table <- tbl$table[- nrow(tbl$table), ]
+  if (!keep_missing) {
+    tbl$table <- tbl$table[-nrow(tbl$table), ]
   }
 
-  if(column_header){
+  if (column_header) {
     col_def <- NULL
-  }else{
+  } else {
     col_def <- reactable::colDef(name = "")
   }
 
   reactable2(tbl$table,
-             sortable = FALSE,
-             searchable = FALSE,
-             filterable = FALSE,
-             defaultPageSize = 50,
-             wrap = TRUE,
-             label = FALSE,
-             columns = list(
-               name_display = reactable::colDef(name = "", minWidth = name_width),
-               name = reactable::colDef(show = FALSE)
-             ),
-             col_def = col_def,
-             download = download %in% c("table", "all"),
-             details = details_ggplot2)
-
+    sortable = FALSE,
+    searchable = FALSE,
+    filterable = FALSE,
+    defaultPageSize = 50,
+    wrap = TRUE,
+    label = FALSE,
+    columns = list(
+      name_display = reactable::colDef(name = "", minWidth = name_width),
+      name = reactable::colDef(show = FALSE)
+    ),
+    col_def = col_def,
+    download = download %in% c("table", "all"),
+    details = details_ggplot2
+  )
 }

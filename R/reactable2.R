@@ -14,18 +14,16 @@ reactable2 <- function(data,
                        wrap = FALSE,
                        download = FALSE,
                        col_def = NULL,
-                       ...){
-
+                       ...) {
   # Display variable label as hover text
-  if(label & is.null(col_def)){
+  if (label & is.null(col_def)) {
     label <- get_label(data)
 
-    col_header <- function(value, name){
+    col_header <- function(value, name) {
       htmltools::div(title = as.character(label[value]), value)
     }
 
     col_def <- reactable::colDef(header = col_header)
-
   }
 
   element_id <- basename(tempfile())
@@ -49,7 +47,7 @@ reactable2 <- function(data,
     ...
   )
 
-  if(download){
+  if (download) {
     on_click <- paste0("Reactable.downloadDataCSV('", element_id, "')")
 
     htmltools::browsable(
@@ -58,7 +56,7 @@ reactable2 <- function(data,
         tbl
       )
     )
-  }else{
+  } else {
     tbl
   }
 }
