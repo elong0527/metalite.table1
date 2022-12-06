@@ -5,8 +5,15 @@ interactive_table1 <- function(meta,
                                column_header = TRUE,
                                var_listing = NULL,
                                download = "none",
+                               type = NULL,
                                ...) {
+
   download <- match.arg(download, choices = c("none", "listing", "table", "all"))
+
+  if(is.null(type)){
+    type <- ifelse(any(duplicated(
+      meta$data_observation[[meta$population[[1]]$id]])), "Records", "Subjects")
+  }
 
   par <- metalite::collect_adam_mapping(meta, parameter)$var
 
@@ -19,6 +26,7 @@ interactive_table1 <- function(meta,
     parameter = parameter,
     listing = TRUE,
     histogram = TRUE,
+    type = type,
     var_listing = var_listing
   )
 

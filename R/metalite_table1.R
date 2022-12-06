@@ -5,6 +5,7 @@
 #' @param id a variable name
 #' @param var_listing a character vector of additional variables included in the listing.
 #' @param download a character to enable download button. Allowed value include
+#' @param type a character value to control section title (e.g. "Subjects", "Records")
 #' "none", "listing", "table", and 'all'.
 #'
 #' @export
@@ -12,7 +13,8 @@ metalite_table1 <- function(formula,
                             data,
                             id,
                             var_listing = NULL,
-                            download = "none") {
+                            download = "none",
+                            type = NULL) {
   if (formula[[2]][[1]] == "|") {
     var <- all.vars(formula[[2]][[2]])
     group <- all.vars(formula[[2]][[3]])
@@ -75,6 +77,6 @@ metalite_table1 <- function(formula,
   meta <- metalite::meta_build(meta)
 
   htmltools::browsable(
-    htmltools::tagList(metalite::meta_run(meta, var_listing = var_listing, download = download))
+    htmltools::tagList(metalite::meta_run(meta, var_listing = var_listing, download = download, type = type))
   )
 }
