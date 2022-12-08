@@ -1,6 +1,7 @@
 interactive_table1 <- function(meta,
                                population,
                                parameter,
+                               keep_total = TRUE,
                                keep_missing = TRUE,
                                column_header = TRUE,
                                var_listing = NULL,
@@ -33,7 +34,7 @@ interactive_table1 <- function(meta,
   # Display details in reactable
   details_ggplot2 <- function(index) {
     detail <- tbl$listing
-    detail[[tbl$table$name[1]]] <- tbl$histogram
+    detail[[tbl$table$name[1 + keep_total]]] <- tbl$histogram
 
     name <- tbl$table[index, ][["name"]]
 
@@ -60,13 +61,13 @@ interactive_table1 <- function(meta,
 
   # Add spaces for sub-category
   space <- rep("\U2000\U2000", length(name_display))
-  space[1] <- ""
+  space[1:2] <- ""
 
   name_display <- paste(space, name_display)
   name_width <- 220
 
   # update table
-  tbl$table <- data.frame(name_display = name_display, tbl$table)
+  tbl$table <- cbind(name_display = name_display, tbl$table)
 
   if (!keep_missing) {
     tbl$table <- tbl$table[-nrow(tbl$table), ]
@@ -78,11 +79,16 @@ interactive_table1 <- function(meta,
     col_def <- reactable::colDef(name = "")
   }
 
+  if(! keep_total){
+    tbl$table <- tbl$table[-1, ]
+  }
+
   reactable2(tbl$table,
     sortable = FALSE,
     searchable = FALSE,
     filterable = FALSE,
     defaultPageSize = 50,
+    showPageSizeOptions = nrow(tbl$table) > 50,
     wrap = TRUE,
     label = FALSE,
     columns = list(

@@ -39,6 +39,7 @@ metalite_table1 <- function(formula,
   plan$column_header <- FALSE
   plan$column_header[1] <- TRUE
 
+  plan$keep_total <- plan$column_header
 
   meta <- metalite::meta_adam(observation = data)
 
@@ -77,6 +78,10 @@ metalite_table1 <- function(formula,
   meta <- metalite::meta_build(meta)
 
   htmltools::browsable(
-    htmltools::tagList(metalite::meta_run(meta, var_listing = var_listing, download = download, type = type))
+    htmltools::tagList(metalite::meta_run(
+      meta,
+      var_listing = var_listing,
+      download = download,
+      type = type))
   )
 }
