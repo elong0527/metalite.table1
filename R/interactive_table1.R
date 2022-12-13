@@ -7,6 +7,7 @@ interactive_table1 <- function(meta,
                                var_listing = NULL,
                                download = "none",
                                type = NULL,
+                               max_row = 50000,
                                ...) {
 
   download <- match.arg(download, choices = c("none", "listing", "table", "all"))
@@ -22,10 +23,15 @@ interactive_table1 <- function(meta,
     return(NULL)
   }
 
+  listing <- nrow(meta$data_population) <= max_row
+  if(! listing){
+    message("Drill-down listing is not provided because there are more than ", max_row, " rows in the datasets")
+  }
+
   tbl <- metalite::collect_n_subject(meta,
     population = population,
     parameter = parameter,
-    listing = TRUE,
+    listing = listing,
     histogram = TRUE,
     type = type,
     var_listing = var_listing

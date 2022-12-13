@@ -5,8 +5,8 @@
 #' @param id a variable name
 #' @param var_listing a character vector of additional variables included in the listing.
 #' @param download a character to enable download button. Allowed value include
-#' @param type a character value to control section title (e.g. "Subjects", "Records")
 #' "none", "listing", "table", and 'all'.
+#' @param type a character value to control section title (e.g. "Subjects", "Records")
 #'
 #' @export
 metalite_table1 <- function(formula,
@@ -15,6 +15,12 @@ metalite_table1 <- function(formula,
                             var_listing = NULL,
                             download = "none",
                             type = NULL) {
+
+  if(nrow(data) == 0){
+    stop("There is no records in the input dataset")
+  }
+
+
   if (formula[[2]][[1]] == "|") {
     var <- all.vars(formula[[2]][[2]])
     group <- all.vars(formula[[2]][[3]])

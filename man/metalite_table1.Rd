@@ -22,10 +22,10 @@ metalite_table1(
 
 \item{var_listing}{a character vector of additional variables included in the listing.}
 
-\item{download}{a character to enable download button. Allowed value include}
-
-\item{type}{a character value to control section title (e.g. "Subjects", "Records")
+\item{download}{a character to enable download button. Allowed value include
 "none", "listing", "table", and 'all'.}
+
+\item{type}{a character value to control section title (e.g. "Subjects", "Records")}
 }
 \description{
 Interactive table1
