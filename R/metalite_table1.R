@@ -1,10 +1,11 @@
 #' Interactive table1
 #'
-#' @param formula a formula
-#' @param data a data frame
-#' @param id a variable name
-#' @param var_listing a character vector of additional variables included in the listing.
-#' @param download a character to enable download button. Allowed value include
+#' @param formula an object of class "formula".
+#' @param data a data frame that contain variables described in the `formula`.
+#' @param id a character value to indicate subject/record id variable name in `data`.
+#' @param var_listing a character vector of additional variables included in the drill down listing.
+#' @param total a logical value to display or hide "Total" column.
+#' @param download a character value to enable download button. Allowed value include
 #' "none", "listing", "table", and 'all'.
 #' @param type a character value to control section title (e.g. "Subjects", "Records")
 #'
@@ -13,6 +14,7 @@ metalite_table1 <- function(formula,
                             data,
                             id,
                             var_listing = NULL,
+                            total = TRUE,
                             download = "none",
                             type = NULL) {
 
@@ -39,6 +41,7 @@ metalite_table1 <- function(formula,
     analysis = "metalite.table1:::interactive_table1",
     population = "all",
     observation = "inf",
+    total = total,
     parameter = var
   )
 

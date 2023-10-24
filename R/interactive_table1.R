@@ -3,6 +3,7 @@ interactive_table1 <- function(meta,
                                parameter,
                                keep_total = TRUE,
                                keep_missing = TRUE,
+                               total = TRUE,
                                column_header = TRUE,
                                var_listing = NULL,
                                download = "none",
@@ -34,7 +35,8 @@ interactive_table1 <- function(meta,
     listing = listing,
     histogram = TRUE,
     type = type,
-    var_listing = var_listing
+    var_listing = var_listing,
+    display_total = total
   )
 
   # Display details in reactable

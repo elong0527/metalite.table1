@@ -9,20 +9,23 @@ metalite_table1(
   data,
   id,
   var_listing = NULL,
+  total = TRUE,
   download = "none",
   type = NULL
 )
 }
 \arguments{
-\item{formula}{a formula}
+\item{formula}{an object of class "formula".}
 
-\item{data}{a data frame}
+\item{data}{a data frame that contain variables described in the \code{formula}.}
 
-\item{id}{a variable name}
+\item{id}{a character value to indicate subject/record id variable name in \code{data}.}
 
-\item{var_listing}{a character vector of additional variables included in the listing.}
+\item{var_listing}{a character vector of additional variables included in the drill down listing.}
 
-\item{download}{a character to enable download button. Allowed value include
+\item{total}{a logical value to display or hide "Total" column.}
+
+\item{download}{a character value to enable download button. Allowed value include
 "none", "listing", "table", and 'all'.}
 
 \item{type}{a character value to control section title (e.g. "Subjects", "Records")}
