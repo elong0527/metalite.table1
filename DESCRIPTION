@@ -19,5 +19,3 @@ Suggests:
     table1,
     devtools
 VignetteBuilder: knitr
-Remotes:
-    Merck/metalite
