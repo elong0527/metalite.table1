@@ -1,5 +1,9 @@
 # metalite.table1
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/elong0527/metalite.table1/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/elong0527/metalite.table1/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+  
 ## Overview
 
 A table for descriptive statistics is widely used 
