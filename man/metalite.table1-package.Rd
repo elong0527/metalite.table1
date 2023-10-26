@@ -6,7 +6,7 @@
 \alias{metalite.table1-package}
 \title{metalite.table1: Interactive Table of Descriptive Statistics in HTML}
 \description{
-Create interactive table of descriptive statistics in HTML. The table typically used for exploratory analysis for a clinical study (refered as "Table 1").
+Create an interactive table of descriptive statistics in HTML. This table is typically used for exploratory analysis in a clinical study (referred to as 'Table 1').
 }
 \author{
 \strong{Maintainer}: Yilong Zhang \email{elong0527@gmail.com}

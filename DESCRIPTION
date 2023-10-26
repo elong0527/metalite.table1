@@ -13,11 +13,11 @@ RoxygenNote: 7.2.3
 Imports: 
     metalite,
     reactable,
-    htmltools,
-    ggplot2
+    htmltools
 Suggests: 
     knitr,
     r2rtf,
     table1,
-    devtools
+    devtools,
+    ggplot2
 VignetteBuilder: knitr
