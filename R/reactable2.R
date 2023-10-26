@@ -17,7 +17,7 @@ reactable2 <- function(data,
                        ...) {
   # Display variable label as hover text
   if (label & is.null(col_def)) {
-    label <- get_label(data)
+    label <- metalite::get_label(data)
 
     col_header <- function(value, name) {
       htmltools::div(title = as.character(label[value]), value)

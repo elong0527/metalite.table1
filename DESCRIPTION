@@ -1,10 +1,11 @@
 Package: metalite.table1
-Title: Interactive Table 1
+Title: Interactive Table of Descriptive Statistics in HTML
 Version: 0.0.0.9000
 Authors@R: c( 
     person("Yilong", "Zhang", email = "elong0527@gmail.com", role = c("aut", "cre"))
     )
-Description: What the package does (one paragraph).
+Description: Create interactive table of descriptive statistics in HTML. 
+  The table typically used for exploratory analysis for a clinical study (refered as "Table 1").
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

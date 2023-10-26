@@ -4,9 +4,9 @@
 \name{metalite.table1-package}
 \alias{metalite.table1}
 \alias{metalite.table1-package}
-\title{metalite.table1: Interactive Table 1}
+\title{metalite.table1: Interactive Table of Descriptive Statistics in HTML}
 \description{
-What the package does (one paragraph).
+Create interactive table of descriptive statistics in HTML. The table typically used for exploratory analysis for a clinical study (refered as "Table 1").
 }
 \author{
 \strong{Maintainer}: Yilong Zhang \email{elong0527@gmail.com}

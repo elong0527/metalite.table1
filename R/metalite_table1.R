@@ -1,13 +1,18 @@
-#' Interactive table1
+#' Interactive Table of Descriptive Statistics in HTML
 #'
 #' @param formula an object of class "formula".
 #' @param data a data frame that contain variables described in the `formula`.
 #' @param id a character value to indicate subject/record id variable name in `data`.
 #' @param var_listing a character vector of additional variables included in the drill down listing.
 #' @param total a logical value to display or hide "Total" column.
-#' @param download a character value to enable download button. Allowed value include
+#' @param download a character value to enable download button. Allowed values include
 #' "none", "listing", "table", and 'all'.
-#' @param type a character value to control section title (e.g. "Subjects", "Records")
+#' @param type a character value to control section title (e.g. "Subjects", "Records").
+#'
+#' @examples
+#' if(interactive()){
+#'   metalite_table1(~ AGE + SEX | TRT01A, data = r2rtf::r2rtf_adsl, id = "SUBJID")
+#' }
 #'
 #' @export
 metalite_table1 <- function(formula,
@@ -35,7 +40,7 @@ metalite_table1 <- function(formula,
 
   data[[group]] <- factor(data[[group]])
 
-  var_label <- get_label(data)[var]
+  var_label <- metalite::get_label(data)[var]
 
   plan <- metalite::plan(
     analysis = "metalite.table1:::interactive_table1",

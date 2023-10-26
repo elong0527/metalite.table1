@@ -2,7 +2,7 @@
 % Please edit documentation in R/metalite_table1.R
 \name{metalite_table1}
 \alias{metalite_table1}
-\title{Interactive table1}
+\title{Interactive Table of Descriptive Statistics in HTML}
 \usage{
 metalite_table1(
   formula,
@@ -25,11 +25,17 @@ metalite_table1(
 
 \item{total}{a logical value to display or hide "Total" column.}
 
-\item{download}{a character value to enable download button. Allowed value include
+\item{download}{a character value to enable download button. Allowed values include
 "none", "listing", "table", and 'all'.}
 
-\item{type}{a character value to control section title (e.g. "Subjects", "Records")}
+\item{type}{a character value to control section title (e.g. "Subjects", "Records").}
 }
 \description{
-Interactive table1
+Interactive Table of Descriptive Statistics in HTML
+}
+\examples{
+if(interactive()){
+  metalite_table1(~ AGE + SEX | TRT01A, data = r2rtf::r2rtf_adsl, id = "SUBJID")
+}
+
 }
