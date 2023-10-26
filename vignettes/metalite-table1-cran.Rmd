@@ -1,0 +1,17 @@
+---
+title: "An Introduction to the metalite.table1 Package"
+output:
+  rmarkdown::html_vignette:
+    number_sections: yes
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{An Introduction to the metalite.table1 Package}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+Please see <https://elong0527.github.io/metalite.table1/> for the full documentation. Here is only a minimal example:
+
+```{r, eval = FALSE}
+library(metalite.table1)
+metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, data = r2rtf::r2rtf_adsl, id = "USUBJID")
+```
