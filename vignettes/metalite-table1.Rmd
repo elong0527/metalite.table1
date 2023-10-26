@@ -68,7 +68,7 @@ metalite_table1(
   ~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula
   data = df, # source data
   id = "USUBJID" # unique subject id
-) 
+)
 ```
 
 
@@ -102,9 +102,10 @@ The `metalite::assign_labels` can modify labels
 
 ```{r}
 df <- metalite::assign_label(
-  df, 
-  var = c("AGE", "BMIBLGR1"), 
-  label = c("Age (Year)", "BMI Group (kg/m2)"))
+  df,
+  var = c("AGE", "BMIBLGR1"),
+  label = c("Age (Year)", "BMI Group (kg/m2)")
+)
 
 metalite::get_label(df)
 ```
@@ -114,10 +115,10 @@ for example, "Number of Participants".
 
 ```{r}
 metalite_table1(~ AGE + SEX | ARM,
-  data = df, 
+  data = df,
   id = "USUBJID",
   type = "Participants"
-) 
+)
 ```
 
 ## Total Column 
@@ -125,11 +126,11 @@ metalite_table1(~ AGE + SEX | ARM,
 The `Total` column can be hided. 
 
 ```{r}
-metalite_table1(~ AGE + SEX | ARM, 
-  data = df, 
+metalite_table1(~ AGE + SEX | ARM,
+  data = df,
   id = "USUBJID",
   total = FALSE
-) 
+)
 ```
 
 ## Download Data 
@@ -138,11 +139,11 @@ We can allow user to download raw data, for example we can
 set `download="listing"` to enable user download the drill down listing. 
 
 ```{r}
-metalite_table1(~ AGE + SEX | ARM, 
-  data = df, 
+metalite_table1(~ AGE + SEX | ARM,
+  data = df,
   id = "USUBJID",
   download = "listing"
-) 
+)
 ```
 
 ## Rmarkdown Render 
@@ -153,17 +154,16 @@ we need to clearly call the `print` function and
 by using `resutls="asis"` (e.g., `{r, results="asis"}`) in the Rmarkdown code chunk. 
 
 ```{r, results="asis"}
-type = c("Subjects", "Records")
-for(i in 1:2){
-  
+type <- c("Subjects", "Records")
+for (i in 1:2) {
   cat("### Table ", i, "\n")
-  
-  tbl <- metalite_table1(~ AGE + SEX | ARM, 
-    data = df, 
+
+  tbl <- metalite_table1(~ AGE + SEX | ARM,
+    data = df,
     id = "USUBJID",
     type = type[i]
   )
-  
+
   metalite_table1_to_html(tbl)
 }
 ```

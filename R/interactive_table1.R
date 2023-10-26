@@ -10,12 +10,12 @@ interactive_table1 <- function(meta,
                                type = NULL,
                                max_row = 50000,
                                ...) {
-
   download <- match.arg(download, choices = c("none", "listing", "table", "all"))
 
-  if(is.null(type)){
+  if (is.null(type)) {
     type <- ifelse(any(duplicated(
-      meta$data_observation[[meta$population[[1]]$id]])), "Records", "Subjects")
+      meta$data_observation[[meta$population[[1]]$id]]
+    )), "Records", "Subjects")
   }
 
   par <- metalite::collect_adam_mapping(meta, parameter)$var
@@ -25,7 +25,7 @@ interactive_table1 <- function(meta,
   }
 
   listing <- nrow(meta$data_population) <= max_row
-  if(! listing){
+  if (!listing) {
     message("Drill-down listing is not provided because there are more than ", max_row, " rows in the datasets")
   }
 
@@ -87,7 +87,7 @@ interactive_table1 <- function(meta,
     col_def <- reactable::colDef(name = "")
   }
 
-  if(! keep_total){
+  if (!keep_total) {
     tbl$table <- tbl$table[-1, ]
   }
 

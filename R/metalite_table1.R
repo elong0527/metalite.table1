@@ -10,7 +10,7 @@
 #' @param type a character value to control section title (e.g. "Subjects", "Records").
 #'
 #' @examples
-#' if(interactive()){
+#' if (interactive()) {
 #'   metalite_table1(~ AGE + SEX | TRT01A, data = r2rtf::r2rtf_adsl, id = "SUBJID")
 #' }
 #'
@@ -22,8 +22,7 @@ metalite_table1 <- function(formula,
                             total = TRUE,
                             download = "none",
                             type = NULL) {
-
-  if(nrow(data) == 0){
+  if (nrow(data) == 0) {
     stop("There is no records in the input dataset")
   }
 
@@ -96,7 +95,8 @@ metalite_table1 <- function(formula,
       meta,
       var_listing = var_listing,
       download = download,
-      type = type))
+      type = type
+    ))
   )
 }
 
@@ -105,6 +105,6 @@ metalite_table1 <- function(formula,
 #' @param x an output from `metalite_table1`.
 #'
 #' @export
-metalite_table1_to_html <- function(x){
+metalite_table1_to_html <- function(x) {
   cat(htmltools::doRenderTags(x))
 }
