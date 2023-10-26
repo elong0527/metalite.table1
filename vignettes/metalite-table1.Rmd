@@ -37,6 +37,16 @@ contains more details.
 The `metalite.table1` provide an interactive table1 to 
 enhance the communication between statisticians and clinicians. 
 
+# Example 
+
+We use a subject level dataset `r2rtf::r2rtf_adsl` to create a example interactive table1. 
+
+First, we modify the dataset by
+
+- adding a few missing values.
+- order the group variables.
+- keep relevent variables. 
+
 ```{r}
 # Prepare analysis ready data
 df <- r2rtf_adsl
@@ -46,17 +56,20 @@ df$ARM <- factor(
   c("Placebo", "Xanomeline Low Dose", "Xanomeline High Dose"),
   c("Placebo", "Low Dose", "High Dose")
 )
+df <- df[, c("USUBJID", "ARM", "AGE", "SEX", "RACE", "BMIBLGR1")]
 
-df[1:6, c("USUBJID", "ARM", "AGE", "SEX", "RACE", "BMIBLGR1")]
+head(df)
 ```
 
-```{r, eval = FALSE}
-# Create interactive table1
+The interactive table1 can then be created by the `metalite_table1` function. 
+
+```{r}
 metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis variables and group
   data = df, # source data
-  id = "USUBJID"
-) # unique subject id
+  id = "USUBJID" # unique subject id
+) 
 ```
+
 
 The interactive features are illustrated in the GIF below. 
 
@@ -73,10 +86,85 @@ we are able to answer ad-hoc questions from clinicians with interactive features
 
 Those are common questions for ongoing clinical trials. 
 
-```{r, eval}
-# create table1
-table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, data = df)
+# Features 
+
+## Section Title 
+
+The section title is defined by the column labels. 
+The `metalite::get_labels` allows you quickly check the label. 
+
+```{r}
+metalite::get_label(df)
 ```
 
+The `metalite::assign_labels` can modify labels 
+
+```{r}
+df <- metalite::assign_label(
+  df, 
+  var = c("AGE", "BMIBLGR1"), 
+  label = c("Age (Year)", "BMI Group (kg/m2)"))
+
+metalite::get_label(df)
+```
+
+The `type` argument can modify the term at the first row, 
+for example, "Number of Participants". 
+
+```{r}
+metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM,
+  data = df, 
+  id = "USUBJID",
+  type = "Participants"
+) 
+```
+
+## Total Column 
+
+The `Total` column can be hided. 
+
+```{r}
+metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, 
+  data = df, 
+  id = "USUBJID",
+  total = FALSE
+) 
+```
+
+## Download Data 
+
+We can allow user to download raw data, for example we can 
+set `download="listing"` to enable user download the drill down listing. 
+
+```{r}
+metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, 
+  data = df, 
+  id = "USUBJID",
+  download = "listing"
+) 
+```
+
+## Rmarkdown Render 
+
+Sometimes we want to create multiple tables in a for loop, 
+we need to clearly call the `print` function and 
+[output text as raw content](https://bookdown.org/yihui/rmarkdown-cookbook/results-asis.html)
+by using `resutls="asis"` (e.g., `{r, results="asis"}`) in the Rmarkdown code chunk. 
+
+```{r, results="asis"}
+type = c("Subjects", "Records")
+for(i in 1:2){
+  
+  cat("### Table ", i, "\n")
+  
+  tbl <- metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, 
+    data = df, 
+    id = "USUBJID",
+    type = type[i]
+  )
+  
+  metalite_table1_to_html(tbl)
+}
+```
 
 

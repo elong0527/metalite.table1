@@ -99,3 +99,12 @@ metalite_table1 <- function(formula,
       type = type))
   )
 }
+
+#' Convert to html
+#'
+#' @param x an output from `metalite_table1`.
+#'
+#' @export
+metalite_table1_to_html <- function(x){
+  cat(htmltools::doRenderTags(x))
+}
