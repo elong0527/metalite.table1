@@ -4,8 +4,8 @@ Version: 0.1.0
 Authors@R: c( 
     person("Yilong", "Zhang", email = "elong0527@gmail.com", role = c("aut", "cre"))
     )
-Description: Create interactive table of descriptive statistics in HTML. 
-  The table typically used for exploratory analysis for a clinical study (refered as "Table 1").
+Description: Create an interactive table of descriptive statistics in HTML. 
+  This table is typically used for exploratory analysis in a clinical study (referred to as 'Table 1').
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
