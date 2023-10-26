@@ -64,7 +64,8 @@ head(df)
 The interactive table1 can then be created by the `metalite_table1` function. 
 
 ```{r}
-metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula for analysis variables and group
+metalite_table1(
+  ~ AGE + SEX + RACE + BMIBLGR1 | ARM, # formula
   data = df, # source data
   id = "USUBJID" # unique subject id
 ) 
