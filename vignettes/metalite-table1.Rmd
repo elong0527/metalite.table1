@@ -112,7 +112,7 @@ The `type` argument can modify the term at the first row,
 for example, "Number of Participants". 
 
 ```{r}
-metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM,
+metalite_table1(~ AGE + SEX | ARM,
   data = df, 
   id = "USUBJID",
   type = "Participants"
@@ -124,7 +124,7 @@ metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM,
 The `Total` column can be hided. 
 
 ```{r}
-metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, 
+metalite_table1(~ AGE + SEX | ARM, 
   data = df, 
   id = "USUBJID",
   total = FALSE
@@ -137,7 +137,7 @@ We can allow user to download raw data, for example we can
 set `download="listing"` to enable user download the drill down listing. 
 
 ```{r}
-metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, 
+metalite_table1(~ AGE + SEX | ARM, 
   data = df, 
   id = "USUBJID",
   download = "listing"
@@ -157,7 +157,7 @@ for(i in 1:2){
   
   cat("### Table ", i, "\n")
   
-  tbl <- metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, 
+  tbl <- metalite_table1(~ AGE + SEX | ARM, 
     data = df, 
     id = "USUBJID",
     type = type[i]
