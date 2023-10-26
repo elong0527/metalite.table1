@@ -2,7 +2,20 @@
 
 ## Overview
 
-`metalite.table1` is an R package for interactive "table1". 
+A table for descriptive statistics is widely used 
+in medical research and typically be the first table (i.e. `table1`) 
+for a manuscript. 
+
+There are R packages and examples to create the table1: 
+
+- [`table1`](https://github.com/benjaminrich/table1)
+
+For use case in clinical trials, 
+[Chapter 4 of the R for clinical study reports and submission](https://r4csr.org/baseline-characteristics.html) 
+contains more details. 
+
+The `metalite.table1` provide an interactive table1 to 
+enhance the communication between statisticians and clinicians. 
 
 Example: 
 
