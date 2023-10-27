@@ -167,7 +167,7 @@ by using `resutls="asis"` (e.g., `{r, results="asis"}`) in the Rmarkdown code ch
 Create a dummy `reactable` object outside of for loop is necessary to include all 
 required javascript library. A full Rmarkdown example is as below.
 
-`r import_example("for-loop.Rmd")`
+`r import_example("for-loop.txt")`
 
 ```{r, results="asis", echo = FALSE}
 type <- c("Subjects", "Records")
