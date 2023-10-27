@@ -7,3 +7,4 @@
 ^pkgdown$
 ^vignettes/metalite-table1.Rmd$
 ^vignettes/fig$
+^vignettes/examples$

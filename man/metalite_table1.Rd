@@ -30,11 +30,15 @@ metalite_table1(
 
 \item{type}{a character value to control section title (e.g. "Subjects", "Records").}
 }
+\value{
+a \code{shiny.tag.list} object that contain a \code{reactable} HTML widget for
+interactive table of describptive statistics.
+}
 \description{
 Interactive Table of Descriptive Statistics in HTML
 }
 \examples{
-if(interactive()){
+if (interactive()) {
   metalite_table1(~ AGE + SEX | TRT01A, data = r2rtf::r2rtf_adsl, id = "SUBJID")
 }
 

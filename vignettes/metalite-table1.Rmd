@@ -148,12 +148,28 @@ metalite_table1(~ AGE + SEX | ARM,
 
 ## Rmarkdown Render 
 
+```{r, include = FALSE}
+import_example <- function(file, lang = xfun::file_ext(file)) {
+  x = xfun::read_utf8(file.path("examples", file))
+  lang = tolower(lang)
+  if (nchar(lang) > 1) {
+    lang = sub('^r', '', lang)
+    if (lang == 'nw') lang = 'tex'
+  }
+  knitr::asis_output(paste(c(sprintf("````%s", lang), x, "````"), collapse = '\n'))
+}
+```
+
 Sometimes we want to create multiple tables in a for loop, 
-we need to clearly call the `print` function and 
+we need to clearly call the `metalite_table1_to_html` function and 
 [output text as raw content](https://bookdown.org/yihui/rmarkdown-cookbook/results-asis.html)
 by using `resutls="asis"` (e.g., `{r, results="asis"}`) in the Rmarkdown code chunk. 
+Create a dummy `reactable` object outside of for loop is necessary to include all 
+required javascript library. A full Rmarkdown example is as below.
 
-```{r, results="asis"}
+`r import_example("for-loop.Rmd")`
+
+```{r, results="asis", echo = FALSE}
 type <- c("Subjects", "Records")
 for (i in 1:2) {
   cat("### Table ", i, "\n")

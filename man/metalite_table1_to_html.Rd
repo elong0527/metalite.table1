@@ -9,6 +9,10 @@ metalite_table1_to_html(x)
 \arguments{
 \item{x}{an output from \code{metalite_table1}.}
 }
+\value{
+HTML string of \code{reactable} HTML widget for
+interactive table of describptive statistics.
+}
 \description{
 Convert to html
 }

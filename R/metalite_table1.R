@@ -9,6 +9,9 @@
 #' "none", "listing", "table", and 'all'.
 #' @param type a character value to control section title (e.g. "Subjects", "Records").
 #'
+#' @return a `shiny.tag.list` object that contain a `reactable` HTML widget for
+#' interactive table of describptive statistics.
+#'
 #' @examples
 #' if (interactive()) {
 #'   metalite_table1(~ AGE + SEX | TRT01A, data = r2rtf::r2rtf_adsl, id = "SUBJID")
@@ -104,7 +107,11 @@ metalite_table1 <- function(formula,
 #'
 #' @param x an output from `metalite_table1`.
 #'
+#' @return HTML string of `reactable` HTML widget for
+#' interactive table of describptive statistics.
+#'
 #' @export
 metalite_table1_to_html <- function(x) {
-  cat(htmltools::doRenderTags(x))
+  attributes(x)$browsable_html <- NULL
+  print(x)
 }

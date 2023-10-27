@@ -1,0 +1,22 @@
+```{r}
+library(metalite.table1)
+```
+
+```{r, include = FALSE}
+reactable::reactable(data.frame(x = 1))
+```
+
+```{r, results="asis"}
+type <- c("Subjects", "Records")
+for (i in 1:2) {
+  cat("### Table ", i, "\n")
+
+  tbl <- metalite_table1(~ AGE + SEX | ARM,
+    data = r2rtf::r2rtf_adsl,
+    id = "USUBJID",
+    type = type[i]
+  )
+  
+  metalite_table1_to_html(tbl)
+}
+```
