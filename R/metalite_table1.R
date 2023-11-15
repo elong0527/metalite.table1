@@ -9,7 +9,7 @@
 #' Default is to show the row for the first variable.
 #' @param download a character value to enable download button. Allowed values include
 #' "none", "listing", "table", and 'all'.
-#' @param type a character value to control section title (e.g. "Subjects", "Records").
+#' @param record_name a character value to control section title (e.g. "Subjects", "Records").
 #' @param ... additional arguments passed to `reactable`. More details refer \url{https://glin.github.io/reactable/reference/reactable.html}
 #'
 #' @return a `shiny.tag.list` object that contain a `reactable` HTML widget for
@@ -28,7 +28,7 @@ metalite_table1 <- function(formula,
                             total = TRUE,
                             header = NULL,
                             download = "none",
-                            type = NULL,
+                            record_name = NULL,
                             ...) {
   if (nrow(data) == 0) {
     stop("There is no records in the input dataset")
@@ -114,7 +114,7 @@ metalite_table1 <- function(formula,
       meta,
       var_listing = var_listing,
       download = download,
-      type = type
+      type = record_name
     ))
   )
 }

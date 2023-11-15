@@ -12,7 +12,7 @@ metalite_table1(
   total = TRUE,
   header = NULL,
   download = "none",
-  type = NULL,
+  record_name = NULL,
   ...
 )
 }
@@ -33,7 +33,7 @@ Default is to show the row for the first variable.}
 \item{download}{a character value to enable download button. Allowed values include
 "none", "listing", "table", and 'all'.}
 
-\item{type}{a character value to control section title (e.g. "Subjects", "Records").}
+\item{record_name}{a character value to control section title (e.g. "Subjects", "Records").}
 
 \item{...}{additional arguments passed to \code{reactable}. More details refer \url{https://glin.github.io/reactable/reference/reactable.html}}
 }
