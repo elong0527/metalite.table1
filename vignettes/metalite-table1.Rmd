@@ -110,14 +110,14 @@ df <- metalite::assign_label(
 metalite::get_label(df)
 ```
 
-The `type` argument can modify the term at the first row, 
+The `record_name` argument can modify the term at the first row, 
 for example, "Number of Participants". 
 
 ```{r}
 metalite_table1(~ AGE + SEX | ARM,
   data = df,
   id = "USUBJID",
-  type = "Participants"
+  record_name = "Participants"
 )
 ```
 
@@ -170,14 +170,14 @@ required javascript library. A full Rmarkdown example is as below.
 `r import_example("for-loop.txt")`
 
 ```{r, results="asis", echo = FALSE}
-type <- c("Subjects", "Records")
+record_name <- c("Subjects", "Records")
 for (i in 1:2) {
   cat("### Table ", i, "\n")
 
   tbl <- metalite_table1(~ AGE + SEX | ARM,
     data = df,
     id = "USUBJID",
-    type = type[i]
+    record_name = record_name[i]
   )
 
   metalite_table1_to_html(tbl)
