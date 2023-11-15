@@ -5,6 +5,8 @@
 #' @param id a character value to indicate subject/record id variable name in `data`.
 #' @param var_listing a character vector of additional variables included in the drill down listing.
 #' @param total a logical value to display or hide "Total" column.
+#' @param header a logical vector with length 1 or same length of the variables in `formula` to show the `Number of xxx` row of each variable.
+#' Default is to show the row for the first variable.
 #' @param download a character value to enable download button. Allowed values include
 #' "none", "listing", "table", and 'all'.
 #' @param type a character value to control section title (e.g. "Subjects", "Records").
@@ -24,13 +26,13 @@ metalite_table1 <- function(formula,
                             id,
                             var_listing = NULL,
                             total = TRUE,
+                            header = NULL,
                             download = "none",
                             type = NULL,
                             ...) {
   if (nrow(data) == 0) {
     stop("There is no records in the input dataset")
   }
-
 
   if (formula[[2]][[1]] == "|") {
     var <- all.vars(formula[[2]][[2]])
@@ -40,6 +42,10 @@ metalite_table1 <- function(formula,
     data$group <- "All"
     attr(data, "group") <- "All"
     group <- "group"
+  }
+
+  if(! length(header) %in% c(0, 1, length(var))){
+    stop("The length of `header` should be either 1 or the same number of variables")
   }
 
   data[[group]] <- factor(data[[group]])
@@ -55,8 +61,12 @@ metalite_table1 <- function(formula,
     ...
   )
 
-  plan$column_header <- FALSE
-  plan$column_header[1] <- TRUE
+  if(is.null(header)){
+    plan$column_header <- FALSE
+    plan$column_header[1] <- TRUE
+  }else{
+    plan$column_header <- header
+  }
 
   plan$keep_total <- plan$column_header
 

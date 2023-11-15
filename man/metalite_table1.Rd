@@ -10,6 +10,7 @@ metalite_table1(
   id,
   var_listing = NULL,
   total = TRUE,
+  header = NULL,
   download = "none",
   type = NULL,
   ...
@@ -25,6 +26,9 @@ metalite_table1(
 \item{var_listing}{a character vector of additional variables included in the drill down listing.}
 
 \item{total}{a logical value to display or hide "Total" column.}
+
+\item{header}{a logical vector with length 1 or same length of the variables in \code{formula} to show the \verb{Number of xxx} row of each variable.
+Default is to show the row for the first variable.}
 
 \item{download}{a character value to enable download button. Allowed values include
 "none", "listing", "table", and 'all'.}
