@@ -37,6 +37,9 @@ metalite_table1 <- function(formula,
   if (formula[[2]][[1]] == "|") {
     var <- all.vars(formula[[2]][[2]])
     group <- all.vars(formula[[2]][[3]])
+    if(length(group) > 1){
+      stop("Only one group variable is supported")
+    }
   } else {
     var <- all.vars(formula[[2]])
     data$group <- "All"
