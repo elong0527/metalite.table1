@@ -10,6 +10,7 @@ interactive_table1 <- function(meta,
                                download = "none",
                                type = NULL,
                                defaultPageSize = 50,
+                               name_width = 220,
                                max_row = 50000,
                                ...) {
   download <- match.arg(download, choices = c("none", "listing", "table", "all"))
@@ -74,7 +75,6 @@ interactive_table1 <- function(meta,
   space[1:2] <- ""
 
   name_display <- paste(space, name_display)
-  name_width <- 220
 
   # update table
   tbl$table <- cbind(name_display = name_display, tbl$table)
