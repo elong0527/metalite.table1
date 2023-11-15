@@ -11,7 +11,8 @@ metalite_table1(
   var_listing = NULL,
   total = TRUE,
   download = "none",
-  type = NULL
+  type = NULL,
+  ...
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ metalite_table1(
 "none", "listing", "table", and 'all'.}
 
 \item{type}{a character value to control section title (e.g. "Subjects", "Records").}
+
+\item{...}{additional arguments passed to \code{reactable}. More details refer \url{https://glin.github.io/reactable/reference/reactable.html}}
 }
 \value{
 a \code{shiny.tag.list} object that contain a \code{reactable} HTML widget for

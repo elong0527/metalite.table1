@@ -8,6 +8,7 @@
 #' @param download a character value to enable download button. Allowed values include
 #' "none", "listing", "table", and 'all'.
 #' @param type a character value to control section title (e.g. "Subjects", "Records").
+#' @param ... additional arguments passed to `reactable`. More details refer \url{https://glin.github.io/reactable/reference/reactable.html}
 #'
 #' @return a `shiny.tag.list` object that contain a `reactable` HTML widget for
 #' interactive table of describptive statistics.
@@ -24,7 +25,8 @@ metalite_table1 <- function(formula,
                             var_listing = NULL,
                             total = TRUE,
                             download = "none",
-                            type = NULL) {
+                            type = NULL,
+                            ...) {
   if (nrow(data) == 0) {
     stop("There is no records in the input dataset")
   }
@@ -49,7 +51,8 @@ metalite_table1 <- function(formula,
     population = "all",
     observation = "inf",
     total = total,
-    parameter = var
+    parameter = var,
+    ...
   )
 
   plan$column_header <- FALSE

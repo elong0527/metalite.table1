@@ -1,5 +1,6 @@
 interactive_table1 <- function(meta,
                                population,
+                               observation = NULL,
                                parameter,
                                keep_total = TRUE,
                                keep_missing = TRUE,
@@ -8,6 +9,7 @@ interactive_table1 <- function(meta,
                                var_listing = NULL,
                                download = "none",
                                type = NULL,
+                               defaultPageSize = 50,
                                max_row = 50000,
                                ...) {
   download <- match.arg(download, choices = c("none", "listing", "table", "all"))
@@ -95,8 +97,8 @@ interactive_table1 <- function(meta,
     sortable = FALSE,
     searchable = FALSE,
     filterable = FALSE,
-    defaultPageSize = 50,
-    showPageSizeOptions = nrow(tbl$table) > 50,
+    defaultPageSize = defaultPageSize,
+    showPageSizeOptions = nrow(tbl$table) > defaultPageSize,
     wrap = TRUE,
     label = FALSE,
     columns = list(
@@ -105,6 +107,7 @@ interactive_table1 <- function(meta,
     ),
     col_def = col_def,
     download = download %in% c("table", "all"),
-    details = details_ggplot2
+    details = details_ggplot2,
+    ...
   )
 }
