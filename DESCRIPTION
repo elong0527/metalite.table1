@@ -1,6 +1,6 @@
 Package: metalite.table1
 Title: Interactive Table of Descriptive Statistics in HTML
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c( 
     person("Yilong", "Zhang", email = "elong0527@gmail.com", role = c("aut", "cre"))
     )
