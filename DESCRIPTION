@@ -14,7 +14,8 @@ Imports:
     metalite,
     reactable,
     htmltools,
-    r2rtf
+    r2rtf,
+    jsonlite
 Suggests: 
     knitr,
     table1,

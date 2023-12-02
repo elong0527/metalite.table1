@@ -12,7 +12,7 @@ metalite_table1_to_rtf <- function(
     x,
     file,
     title = "Baseline Characteristics",
-    rel_width = NULL){
+    col_rel_width = NULL){
 
   # prepare input
   tbl <- lapply(tbl[[1]], reactable_to_df)

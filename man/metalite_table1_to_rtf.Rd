@@ -8,7 +8,7 @@ metalite_table1_to_rtf(
   x,
   file,
   title = "Baseline Characteristics",
-  rel_width = NULL
+  col_rel_width = NULL
 )
 }
 \arguments{
@@ -17,6 +17,9 @@ metalite_table1_to_rtf(
 \item{file}{A character string naming a file to save rtf file.}
 
 \item{title}{Title in a character string.}
+
+\item{col_rel_width}{Column relative width in a vector e.g. c(2,1,1) refers to 2:1:1.
+Default is NULL for equal column width.}
 }
 \value{
 a string of the RTF file path
