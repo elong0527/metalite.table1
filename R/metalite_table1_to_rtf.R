@@ -1,9 +1,9 @@
 #' Convert `metalite_table1` to an RTF file
 #'
 #' @param x Output of `metalite_table1`.
-#' @inheritParam r2rtf::write_rtf
-#' @inheritParam r2rtf::rtf_title
-#' @inheritParam r2rtf::rtf_body
+#' @inheritParams r2rtf::write_rtf
+#' @inheritParams r2rtf::rtf_title
+#' @inheritParams r2rtf::rtf_body
 #'
 #' @return a string of the RTF file path
 #'
