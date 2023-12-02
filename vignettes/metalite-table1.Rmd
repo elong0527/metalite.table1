@@ -184,4 +184,18 @@ for (i in 1:2) {
 }
 ```
 
+## RTF file 
+
+User can also export a static table to an RTF file by using the `metalite_table1_to_rtf` function. 
+
+```{r}
+metalite_table1(
+  ~ AGE + SEX + RACE + BMIBLGR1 | ARM, 
+  data = df, 
+  id = "USUBJID" 
+) |>
+  metalite_table1_to_rtf("tmp1.rtf")
+```
+
+
 
