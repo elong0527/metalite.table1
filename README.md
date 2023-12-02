@@ -14,16 +14,16 @@ A table for descriptive statistics is widely used
 in medical research and typically be the first table (i.e. `table1`) 
 for a manuscript. 
 
-There are R packages and examples to create the table1: 
-
-- [`table1`](https://github.com/benjaminrich/table1)
+The `metalite.table1` provide an interactive table1 to 
+enhance the communication between statisticians and clinicians. 
 
 For use case in clinical trials, 
 [Chapter 4 of the R for clinical study reports and submission](https://r4csr.org/tlf-baseline.html) 
 contains more details. 
 
-The `metalite.table1` provide an interactive table1 to 
-enhance the communication between statisticians and clinicians. 
+There are other R packages to create the table1: 
+
+- [`table1`](https://github.com/benjaminrich/table1)
 
 Example: 
 
@@ -34,9 +34,22 @@ metalite_table1(~ AGE + SEX + RACE + BMIBLGR1 | ARM, data = r2rtf::r2rtf_adsl, i
 
 ![](https://raw.githubusercontent.com/elong0527/metalite.table1/main/vignettes/fig/table1.gif)
 
+## Installation
+
+You can install the package via CRAN:
+
+``` r
+install.packages("metalite.table1")
+```
+
+Or, install from GitHub:
+
+``` r
+remotes::install_github("elong0527/metalite.table1")
+
 ## Highlighted features
 
-- Drill down into listings
+- Drill down listings
 - Embedded histogram
 
 
