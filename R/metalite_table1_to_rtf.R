@@ -23,18 +23,18 @@ metalite_table1_to_rtf <- function(
 
   n_col <- ncol(tbl)
 
-  if(is.null(rel_width)){
-    rel_width = c(5, rep(2, n_col - 1))
+  if(is.null(col_rel_width)){
+    col_rel_width = c(5, rep(2, n_col - 1))
   }
 
   # output RTF
   tbl |>
     r2rtf::rtf_title(title) |>
     r2rtf::rtf_colheader(colheader,
-                         col_rel_width = rel_width
+                         col_rel_width = col_rel_width
     ) |>
     r2rtf::rtf_body(
-      col_rel_width = rel_width,
+      col_rel_width = col_rel_width,
       text_justification = c("l", rep("c", n_col - 1)),
       text_indent_first = -240,
       text_indent_left = 180
