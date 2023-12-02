@@ -60,3 +60,34 @@ reactable2 <- function(data,
     tbl
   }
 }
+
+#' Convert reactable to a data frame
+#'
+#' @param x  A `reactable` HTML widget
+#'
+#' @return A data frame
+#'
+reactable_to_df <- function(x){
+
+  # table data
+  tbl1 <- do.call(cbind, jsonlite::fromJSON(x$x$tag$attribs$data))
+
+  # table columns
+  columns <- x$x$tag$attribs$columns
+  tbl2 <- list()
+  for(i in seq_along(columns)){
+    if(! columns[[i]]$id %in% ".details"){
+      if(is.null(columns[[i]]$show)){
+        tbl2[[i]] <- unlist(columns[[i]])
+      }
+    }
+  }
+  tbl2 <- dplyr::bind_rows(tbl2)
+
+  # output
+  tbl <- data.frame(tbl1[, tbl2$id])
+
+  attr(tbl, "column_header") <- paste(tbl2$name, collapse = "|")
+
+  tbl
+}
