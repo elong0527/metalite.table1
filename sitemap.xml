@@ -36,4 +36,10 @@
   <url>
     <loc>/reference/metalite_table1_to_html.html</loc>
   </url>
+  <url>
+    <loc>/reference/metalite_table1_to_rtf.html</loc>
+  </url>
+  <url>
+    <loc>/reference/reactable_to_df.html</loc>
+  </url>
 </urlset>
