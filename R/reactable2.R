@@ -87,6 +87,7 @@ reactable_to_df <- function(x){
   # output
   tbl <- data.frame(tbl1[, tbl2[["id"]]])
 
+  tbl[, 1] <- gsub("\U2000", " ", tbl[, 1])
   attr(tbl, "column_header") <- paste(tbl2$name, collapse = "|")
 
   tbl
