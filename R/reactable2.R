@@ -78,14 +78,14 @@ reactable_to_df <- function(x){
   for(i in seq_along(columns)){
     if(! columns[[i]]$id %in% ".details"){
       if(is.null(columns[[i]]$show)){
-        tbl2[[i]] <- unlist(columns[[i]])
+        tbl2[[i]] <- unlist(columns[[i]][c("id", "name")])
       }
     }
   }
-  tbl2 <- dplyr::bind_rows(tbl2)
+  tbl2 <- data.frame(do.call(rbind, tbl2))
 
   # output
-  tbl <- data.frame(tbl1[, tbl2$id])
+  tbl <- data.frame(tbl1[, tbl2[["id"]]])
 
   attr(tbl, "column_header") <- paste(tbl2$name, collapse = "|")
 
