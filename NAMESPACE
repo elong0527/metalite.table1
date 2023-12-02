@@ -2,3 +2,4 @@
 
 export(metalite_table1)
 export(metalite_table1_to_html)
+export(metalite_table1_to_rtf)

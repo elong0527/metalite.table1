@@ -1,6 +1,6 @@
 Package: metalite.table1
 Title: Interactive Table of Descriptive Statistics in HTML
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: c( 
     person("Yilong", "Zhang", email = "elong0527@gmail.com", role = c("aut", "cre"))
     )
@@ -13,10 +13,10 @@ RoxygenNote: 7.2.3
 Imports: 
     metalite,
     reactable,
-    htmltools
+    htmltools,
+    r2rtf
 Suggests: 
     knitr,
-    r2rtf,
     table1,
     devtools,
     ggplot2
