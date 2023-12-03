@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="index.html">metalite.table1</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,22 +73,32 @@
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <p>A table for descriptive statistics is widely used in medical research and typically be the first table (i.e. <code>table1</code>) for a manuscript.</p>
-<p>There are R packages and examples to create the table1:</p>
+<p>The <code>metalite.table1</code> provide an interactive table1 to enhance the communication between statisticians and clinicians.</p>
+<p>For use case in clinical trials, <a href="https://r4csr.org/tlf-baseline.html" class="external-link">Chapter 4 of the R for clinical study reports and submission</a> contains more details.</p>
+<p>There are other R packages to create the table1:</p>
 <ul>
 <li><a href="https://github.com/benjaminrich/table1" class="external-link"><code>table1</code></a></li>
 </ul>
-<p>For use case in clinical trials, <a href="https://r4csr.org/tlf-baseline.html" class="external-link">Chapter 4 of the R for clinical study reports and submission</a> contains more details.</p>
-<p>The <code>metalite.table1</code> provide an interactive table1 to enhance the communication between statisticians and clinicians.</p>
 <p>Example:</p>
 <pre><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">metalite.table1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/metalite_table1.html">metalite_table1</a></span><span class="op">(</span><span class="op">~</span> <span class="va">AGE</span> <span class="op">+</span> <span class="va">SEX</span> <span class="op">+</span> <span class="va">RACE</span> <span class="op">+</span> <span class="va">BMIBLGR1</span> <span class="op">|</span> <span class="va">ARM</span>, data <span class="op">=</span> <span class="fu">r2rtf</span><span class="fu">::</span><span class="va"><a href="https://merck.github.io/r2rtf/reference/r2rtf_adsl.html" class="external-link">r2rtf_adsl</a></span>, id <span class="op">=</span> <span class="st">"USUBJID"</span><span class="op">)</span></span></code></pre>
 <p><img src="https://raw.githubusercontent.com/elong0527/metalite.table1/main/vignettes/fig/table1.gif"></p>
 </div>
 <div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the package via CRAN:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"metalite.table1"</span><span class="op">)</span></span></code></pre></div>
+<p>Or, install from GitHub:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"elong0527/metalite.table1"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="highlighted-features">Highlighted features<a class="anchor" aria-label="anchor" href="#highlighted-features"></a>
 </h2>
 <ul>
-<li>Drill down into listings</li>
+<li>Drill down listings</li>
 <li>Embedded histogram</li>
 </ul>
 </div>
@@ -129,6 +139,7 @@
 <li><a href="https://CRAN.R-project.org/package=metalite.table1" class="external-link"><img src="https://www.r-pkg.org/badges/version/metalite.table1" alt="CRAN status"></a></li>
 <li><a href="https://cran.r-project.org/package=metalite.table1" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/metalite.table1" alt="CRAN Downloads"></a></li>
 <li><a href="https://github.com/elong0527/metalite.table1/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/elong0527/metalite.table1/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://tinyverse.netlify.app/" class="external-link"><img src="https://tinyverse.netlify.com/badge/metalite.table1" alt="status"></a></li>
 </ul>
 </div>
 
