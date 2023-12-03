@@ -158,6 +158,15 @@ import_example <- function(file, lang = xfun::file_ext(file)) {
   }
   knitr::asis_output(paste(c(sprintf("````%s", lang), x, "````"), collapse = '\n'))
 }
+
+rtf2pdf <- function(input) {
+  input <- normalizePath(input)
+  dir.create("tlf", showWarnings = FALSE)
+  x <- "export LD_LIBRARY_PATH=:/usr/lib/libreoffice/program:/usr/lib/x86_64-linux-gnu/"
+  y <- paste0("libreoffice --invisible --headless --nologo --convert-to pdf --outdir tlf/ ", input)
+  z <- paste(x, y, sep = " && ")
+  if (Sys.getenv("GITHUB_ACTIONS") != "") system(z) else invisible(NULL)
+}
 ```
 
 Sometimes we want to create multiple tables in a for loop, 
@@ -197,5 +206,11 @@ metalite_table1(
   metalite_table1_to_rtf("tmp1.rtf")
 ```
 
+```{r, include=FALSE}
+rtf2pdf("tmp1.rtf")
+```
 
+```{r, out.width = "100%", out.height = if (knitr::is_html_output()) "400px", echo = FALSE, fig.align = "center"}
+knitr::include_graphics("tlf/tmp1.pdf")
+```
 
