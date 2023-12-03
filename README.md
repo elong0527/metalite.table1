@@ -6,6 +6,7 @@ status](https://www.r-pkg.org/badges/version/metalite.table1)](https://CRAN.R-pr
 [![CRAN
 Downloads](https://cranlogs.r-pkg.org/badges/metalite.table1)](https://cran.r-project.org/package=metalite.table1)
 [![R-CMD-check](https://github.com/elong0527/metalite.table1/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/elong0527/metalite.table1/actions/workflows/R-CMD-check.yaml)
+[![status](https://tinyverse.netlify.com/badge/metalite.table1)](https://tinyverse.netlify.app/)
 <!-- badges: end -->
   
 ## Overview
