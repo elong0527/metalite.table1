@@ -5,6 +5,8 @@ vignette: >
   %\VignetteIndexEntry{Overview}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+resource_files:
+   - tlf/*.pdf
 ---
 
 ```{r, include = FALSE}
@@ -206,7 +208,7 @@ metalite_table1(
   metalite_table1_to_rtf("tmp1.rtf")
 ```
 
-```{r, include=FALSE}
+```{r, include=TRUE}
 rtf2pdf("tmp1.rtf")
 ```
 
