@@ -46,6 +46,7 @@ Or, install from GitHub:
 
 ``` r
 remotes::install_github("elong0527/metalite.table1")
+```
 
 ## Highlighted features
 
