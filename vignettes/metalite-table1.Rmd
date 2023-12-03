@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+run_github_action <- Sys.getenv("GITHUB_ACTIONS") == ""
 ```
 
 ```{r, include = FALSE}
@@ -208,11 +209,11 @@ metalite_table1(
   metalite_table1_to_rtf("tmp1.rtf")
 ```
 
-```{r, include=TRUE}
+```{r, include=FALSE, eval = ! run_github_action}
 rtf2pdf("tmp1.rtf")
 ```
 
-```{r, out.width = "100%", out.height = if (knitr::is_html_output()) "400px", echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", out.height = if (knitr::is_html_output()) "400px", echo = FALSE, fig.align = "center", eval = ! run_github_action}
 knitr::include_graphics("tlf/tmp1.pdf")
 ```
 
