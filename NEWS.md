@@ -1,3 +1,8 @@
+# metalite.table1 0.4.0
+
+* provide a default method when `id = NULL`.
+* bug fix: enable nested listing for Missing values. 
+
 # metalite.table1 0.3.0
 
 * enable RTF table generation using `metalite_table1_to_rtf`.
