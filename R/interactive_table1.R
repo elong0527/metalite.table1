@@ -6,6 +6,7 @@ interactive_table1 <- function(meta,
                                keep_missing = TRUE,
                                total = TRUE,
                                column_header = TRUE,
+                               show_listing = TRUE,
                                var_listing = NULL,
                                download = "none",
                                type = NULL,
@@ -31,6 +32,7 @@ interactive_table1 <- function(meta,
   if (!listing) {
     message("Drill-down listing is not provided because there are more than ", max_row, " rows in the datasets")
   }
+  listing <- show_listing & listing
 
   tbl <- metalite::collect_n_subject(meta,
     population = population,

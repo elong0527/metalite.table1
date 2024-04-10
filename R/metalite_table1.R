@@ -23,7 +23,7 @@
 #' @export
 metalite_table1 <- function(formula,
                             data,
-                            id,
+                            id = NULL,
                             var_listing = NULL,
                             total = TRUE,
                             header = NULL,
@@ -32,6 +32,14 @@ metalite_table1 <- function(formula,
                             ...) {
   if (nrow(data) == 0) {
     stop("There is no records in the input dataset")
+  }
+
+  if(is.null(id)){
+    data$.id <- 1:nrow(data)
+    id = ".id"
+    show_listing <- FALSE
+  }else{
+    show_listing <- TRUE
   }
 
   if (formula[[2]][[1]] == "|") {
@@ -112,6 +120,7 @@ metalite_table1 <- function(formula,
   htmltools::browsable(
     htmltools::tagList(metalite::meta_run(
       meta,
+      show_listing = show_listing,
       var_listing = var_listing,
       download = download,
       type = record_name
