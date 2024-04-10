@@ -43,6 +43,7 @@ interactive_table1 <- function(meta,
     var_listing = var_listing,
     display_total = total
   )
+  names(tbl$listing)[is.na(names(tbl$listing))] <- "Missing"
 
   # Display details in reactable
   details_ggplot2 <- function(index) {
