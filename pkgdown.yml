@@ -1,8 +1,8 @@
 pandoc: 3.1.11
-pkgdown: 2.0.7
+pkgdown: 2.0.8
 pkgdown_sha: ~
 articles:
   metalite-table1-cran: metalite-table1-cran.html
   metalite-table1: metalite-table1.html
-last_built: 2024-04-10T01:18Z
+last_built: 2024-04-11T20:52Z
 
