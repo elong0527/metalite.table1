@@ -7,7 +7,7 @@
 metalite_table1(
   formula,
   data,
-  id,
+  id = NULL,
   var_listing = NULL,
   total = TRUE,
   header = NULL,
