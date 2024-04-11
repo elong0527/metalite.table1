@@ -50,15 +50,15 @@ reactable2 <- function(data,
   if (download) {
     on_click <- paste0("Reactable.downloadDataCSV('", element_id, "')")
 
-    htmltools::browsable(
+    tbl <- htmltools::browsable(
       htmltools::tagList(
         htmltools::tags$button("Download as CSV", onclick = on_click),
         tbl
       )
     )
-  } else {
-    tbl
   }
+  attr(tbl, "data") <- tbl$data
+
 }
 
 #' Convert reactable to a data frame
