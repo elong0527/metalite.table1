@@ -140,3 +140,25 @@ metalite_table1_to_html <- function(x) {
   attributes(x)$browsable_html <- NULL
   print(x)
 }
+
+
+#' Convert to data frame
+#'
+#' @param x an output from `metalite_table1`.
+#'
+#' @return a data frame that contain the table from the html output and
+#' a `.id` variable for variables.
+#'
+#' @export
+#'
+metalite_table1_to_df <- function(x) {
+
+  out <- lapply(x[[1]], function(.x){
+    tbl <- reactable_to_df(.x)
+    tbl$.id <- tbl[is.na(tbl[, 2]), "name_display"]
+    tbl
+  })
+  names(out) <- NULL
+  do.call(rbind, out)
+
+}
