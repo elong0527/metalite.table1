@@ -61,6 +61,19 @@ metalite_table1 <- function(formula,
 
   data[[group]] <- factor(data[[group]])
 
+  if (missing_group == "ignore") {
+    data <- data[!is.na(data[[group]]), ]
+    message("Ignore missing values in the group variable.")
+  } else if (missing_group == "count") {
+    data[[group]] <- addNA(data[[group]], ifany = TRUE)
+    levels(data[[group]]) <- c(levels(data[[group]]), "Missing")
+  } else if (missing_group == "display") {
+    data[[group]] <- addNA(data[[group]], ifany = TRUE)
+    levels(data[[group]]) <- c(levels(data[[group]]), "Missing")
+  } else {
+    stop("Invalid value for 'missing_group'.")
+  }
+
   var_label <- metalite::get_label(data)[var]
 
   plan <- metalite::plan(
